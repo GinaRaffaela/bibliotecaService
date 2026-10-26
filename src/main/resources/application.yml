@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: biblioteca-service
+  datasource:
+    url: ${ORACLE_JDBC_URL:jdbc:oracle:thin:@localhost:1521/XEPDB1}
+    username: ${ORACLE_USERNAME:dev_user}
+    password: ${ORACLE_PASSWORD:devuser2026}
+    driver-class-name: oracle.jdbc.OracleDriver
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 30000
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  sql:
+    init:
+      mode: never
+  mvc:
+    problemdetails:
+      enabled: true
+
+server:
+  port: ${PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
